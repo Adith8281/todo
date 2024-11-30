@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    {% load static %}
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        
+
 * {
     margin: 0;
     padding: 0;
@@ -56,6 +48,8 @@ body {
     border-radius: 5px;
     resize: none;
 }
+
+/* Button styling */
 .add-button button {
     padding: 10px 20px;
     font-size: 18px;
@@ -102,34 +96,3 @@ body {
 .update-link a:hover {
     text-decoration: underline;
 }
-
-    </style>
-    <!-- <link rel="stylesheet" href="{% static 'css/style.css' %}"> -->
-</head>
-<body>
-    <div class="all-container">
-        <form action="../" method="POST">
-            {% csrf_token %}
-            <div class="main">
-                <div class="add-section">
-                    <div class="add-input">
-                        <textarea name="text" id="" placeholder="Enter your subject..."></textarea>
-                    </div>
-                    <div class="add-button">
-                        <button type="submit" value="submit">+<br>add</button>
-                    </div>
-                </div>
-                <div class="update-list">
-                    {% for i in subjects %}
-                    <div class="subject-item">
-                        <div class="slno">sl.no: {{ i.slno }}</div>
-                        <div class="sub">sub: {{ i.sub }}</div>
-                        <div class="update-link"><a href="../todo_update/{{ i.slno }}">update</a></div>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </form>
-    </div>
-</body>
-</html>
